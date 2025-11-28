@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.sanico/história.com</title>
+    <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: rgb(5, 77, 178);
+      position: relative;
+      overflow-x: hidden;
+    }
+    .nomcab{
+      color:#fff;
+      font-size: clamp(0.8rem,1.8vw,1.4rem);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 2000;
+      text-decoration: none;
+      text-shadow: 0 2px 6px black; 
+      transition: all 0.3s ease-in-out;
+    }
+    .nomcab:hover{
+      background:rgba(0,0,0,0.6);
+      text-decoration: underline;
+    }
+    .menu-lateral{
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%;
+      background: #ffffff;
+      border-right: 2px solid #d3d3d3;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+      padding: 18px;
+      z-index: 3000;
+      transition: left 0.35s ease;
+    }
+    .menu-lateral.open{
+      left: 0;
+    }
+    .menu-lateral h2{
+      font-size: 1.3rem;
+      color: #02326a;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+    .menu-lateral a{
+      display: block;
+      padding: 12px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: #02326a;
+      background: #f2f4ff;
+      border-radius: 6px;
+      transition: 0.25s;
+      font-weight: 600;
+    }
+    .menu-lateral a:hover{
+      background: #d9e6ff;
+    }
+    .fechar-menu{
+      font-size: 1.4rem;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      color: #02326a;
+      font-weight: bold;
+    }
+    .overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+      display: none;
+      z-index: 2500;
+    }
+    .overlay.show{
+      display: block;
+    }
+    .titulo{
+      text-align: center;
+      font-size: 1.9rem;
+      color:#ffffff;
+      margin-top: 40px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      font-weight: 600;
+    }
+    .fund{
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 1300px;
+      margin: 60px auto;
+      box-shadow: 0 4px 16px rgb(255, 255, 255);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .imagem{
+      width: 100%;
+      max-width: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e9e9e9;
+      border: 2px solid rgba(0, 0, 0, 0.362);
+      transition: box-shadow .22s ease;
+    }
+    .imagem:hover{
+      box-shadow: 0 4px 12px rgb(0, 0, 0);
+    }
+    .texto{
+      font-size: 1.2rem;
+      color: black;
+      font-weight: 600;
+      line-height: 1.6;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.49);
+    }
+    .texto p{
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px){
+    .fund{
+        flex-direction: column;   
+        text-align: center;
+        padding: 20px;
+    }
+    .imagem{
+        max-width: 100%;        
+        margin: 0 auto;           
+    }
+    .texto{
+        font-size: 1rem;          
+        text-align: left;         
+    }
+    .titulo{
+        font-size: 1.8rem;
+    }
+    }    
+    </style>
+</head>
+<body>
+  <div class="nomcab" id="abrirMenu">☰ Escola Estadual Sanico Teles</div>
+  <div class="menu-lateral" id="menu">
+    <div class="fechar-menu" id="fecharMenu">✖</div>
+    <a href="sanico.html">Página Inicial</a>
+    <a href="diretores.html">Diretores</a>
+    <a href="professores.html">História</a>
+    <a href="premios.html">Prêmios</a>
+    <a href="formacao.html">Formação Técnica</a>
+    <a href="EventoEx.html">Eventos Externos</a>
+    <a href="EventosIn.html">Eventos Internos</a>
+  </div>
+  <div class="overlay" id="overlay"></div>  
+  <h1 class="titulo">-História-</h1>
+  <div class="fund">
+       <img src="historia.jpg" class="imagem">
+       <div class="texto">
+            <p>Uma instituição de ensino em Santa Rita do Sapucaí, Minas Gerais, fundada para atender a comunidade local e rural. A escola se destacou por sua infraestrutura e atividades culturais, como o "Grupinho de Lata" e o "Festival do Guaraná", e foi pioneira na implementação do Novo Ensino Médio em Minas Gerais.</p>
+            <p>Com mais de 60 anos de história, a escola é um pilar da comunidade local. Ela é conhecida por sua atuação na educação e por eventos que mobilizam a cidade, como as celebrações de seus 50 anos em 2014 e 60 anos em 2024. A gestão administrativa e financeira é apoiada pela "Caixa Escolar Sanico Teles".</p>
+       </div>
+  </div>
+  <script>
+    const menu = document.getElementById("menu");
+    const abrir = document.getElementById("abrirMenu");
+    const fechar = document.getElementById("fecharMenu");
+    const overlay = document.getElementById("overlay");
+    abrir.onclick = () => {
+      menu.classList.add("open");
+      overlay.classList.add("show");
+    }
+    fechar.onclick = () => {
+      menu.classList.remove("open");
+      overlay.classList.remove("show");
+    }
+    overlay.onclick = () => {
+      menu.classList.remove("open");
+      overlay.classList.remove("show");
+    }
+  </script>        
+</body>
+</html>
